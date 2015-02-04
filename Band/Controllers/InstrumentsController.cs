@@ -20,6 +20,11 @@ namespace Band.Controllers
             return View(db.Instruments.ToList());
         }
 
+        public ActionResult Archive()
+        {
+            return View(db.Instruments.ToList());
+        }
+
         // GET: Instruments/Details/5
         public ActionResult Details(string id)
         {
@@ -48,6 +53,7 @@ namespace Band.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "InstrumentID,Name,Date,Comment")] Instrument instrument)
         {
+            instrument.IsCheckedOut = true;
             if (ModelState.IsValid)
             {
                 db.Instruments.Add(instrument);
@@ -111,6 +117,10 @@ namespace Band.Controllers
         {
             Instrument instrument = db.Instruments.Find(id);
             db.Instruments.Remove(instrument);
+            /*                                  This code can be implemented when the Name key is changed to allow non-unique
+            instrument.IsCheckedOut = false;    names. Once this is implemented, we don't need to Remove the instrument from the
+            db.Instruments.Add(instrument);     DB. so remove the line "db.Instruments.Remove(instrument)" located above
+            */
             db.SaveChanges();
             return RedirectToAction("Index");
         }

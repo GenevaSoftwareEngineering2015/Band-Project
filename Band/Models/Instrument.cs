@@ -11,6 +11,7 @@ namespace Band.Models
         public string Name { get; set; }
         public DateTime Date { get; set; }
         public string Comment { get; set; }
+        public bool IsCheckedOut { get; set; }
 
     }
 }
