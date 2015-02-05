@@ -29,6 +29,24 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PublishDatabaseSettings>
+      <Objects>
+        <ObjectGroup Name="DefaultConnection-Deployment" Order="1">
+          <Destination Path="" />
+          <Object Type="DbFullSql">
+            <PreSource Path="Data Source=%28LocalDb%29\v11.0%3bAttachDbFilename=|DataDirectory|\aspnet-Band-20150203092701.mdf%3bInitial Catalog=aspnet-Band-20150203092701%3bIntegrated Security=True" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" />
+            <Source Path="obj\Debug\AutoScripts\DefaultConnection-Deployment_SchemaOnly.sql" Transacted="True" />
+          </Object>
+        </ObjectGroup>
+        <ObjectGroup Name="BandDBConnection-Deployment" Order="2">
+          <Destination Path="" />
+          <Object Type="DbFullSql">
+            <PreSource Path="Data Source=%28LocalDb%29\v11.0%3bAttachDbFilename=|DataDirectory|\aspnet-Band-20150203092701.mdf%3bInitial Catalog=aspnet-Band-20150203092701%3bIntegrated Security=True" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" />
+            <Source Path="obj\Debug\AutoScripts\BandDBConnection-Deployment_SchemaOnly.sql" Transacted="True" />
+          </Object>
+        </ObjectGroup>
+      </Objects>
+    </PublishDatabaseSettings>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -167,9 +185,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201502041929040_InitialMigration.cs" />
-    <Compile Include="Migrations\201502041929040_InitialMigration.Designer.cs">
-      <DependentUpon>201502041929040_InitialMigration.cs</DependentUpon>
+    <Compile Include="Migrations\201502042339432_Initial.cs" />
+    <Compile Include="Migrations\201502042339432_Initial.Designer.cs">
+      <DependentUpon>201502042339432_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -254,8 +272,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201502041929040_InitialMigration.resx">
-      <DependentUpon>201502041929040_InitialMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201502042339432_Initial.resx">
+      <DependentUpon>201502042339432_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -15,7 +15,7 @@
             @Html.DisplayNameFor(model => model.Name)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.InstrumentID)
+            @Html.DisplayNameFor(model => model.InstrumentName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Date)
@@ -34,7 +34,7 @@
                     @Html.DisplayFor(modelItem => item.Name)
                 </td>
                 <th>
-                    @Html.DisplayFor(modelItem => item.InstrumentID)
+                    @Html.DisplayFor(modelItem => item.InstrumentName)
                 </th>
                 <td>
                     @Html.DisplayFor(modelItem => item.Date)
@@ -44,9 +44,9 @@
                     @Html.DisplayFor(modelItem => item.Comment)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.InstrumentID }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.InstrumentID }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.InstrumentID })
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
                 </td>
             </tr>
          }

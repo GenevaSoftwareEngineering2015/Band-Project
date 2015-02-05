@@ -18,7 +18,7 @@
             @Html.DisplayFor(model => model.Name)
         </dd>
         <dd>
-            @Html.DisplayFor(model => model.InstrumentID)
+            @Html.DisplayFor(model => model.InstrumentName)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Date)
@@ -40,6 +40,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.InstrumentID }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.InstrumentName }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

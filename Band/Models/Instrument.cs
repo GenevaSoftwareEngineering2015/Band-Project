@@ -7,11 +7,12 @@ namespace Band.Models
 {
     public class Instrument
     {
-        public string InstrumentID { get; set; }
+        public string InstrumentName { get; set; }
         public string Name { get; set; }
         public DateTime Date { get; set; }
         public string Comment { get; set; }
         public bool IsCheckedOut { get; set; }
+        public int ID { get; set; }
 
     }
 }

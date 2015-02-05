@@ -26,12 +26,12 @@ namespace Band.Controllers
         }
 
         // GET: Instruments/Details/5
-        public ActionResult Details(string id)
+        public ActionResult Details(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
+            //if (id == null)
+            //{
+            //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            //}
             Instrument instrument = db.Instruments.Find(id);
             if (instrument == null)
             {
@@ -51,7 +51,7 @@ namespace Band.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "InstrumentID,Name,Date,Comment")] Instrument instrument)
+        public ActionResult Create([Bind(Include = "InstrumentName,Name,Date,Comment,ID")] Instrument instrument)
         {
             instrument.IsCheckedOut = true;
             if (ModelState.IsValid)
@@ -65,12 +65,12 @@ namespace Band.Controllers
         }
 
         // GET: Instruments/Edit/5
-        public ActionResult Edit(string id)
+        public ActionResult Edit(int id)
         {
-            if (id == null)
+           /* if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
+            }*/
             Instrument instrument = db.Instruments.Find(id);
             if (instrument == null)
             {
@@ -84,7 +84,7 @@ namespace Band.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "InstrumentID,Name,Date,Comment")] Instrument instrument)
+        public ActionResult Edit([Bind(Include = "InstrumentName,Name,Date,Comment")] Instrument instrument)
         {
             if (ModelState.IsValid)
             {
@@ -96,12 +96,12 @@ namespace Band.Controllers
         }
 
         // GET: Instruments/Delete/5
-        public ActionResult Delete(string id)
+        public ActionResult Delete(int id)
         {
-            if (id == null)
+           /* if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
+            }*/
             Instrument instrument = db.Instruments.Find(id);
             if (instrument == null)
             {
@@ -113,14 +113,14 @@ namespace Band.Controllers
         // POST: Instruments/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(string id)
+        public ActionResult DeleteConfirmed(int id)
         {
             Instrument instrument = db.Instruments.Find(id);
-            db.Instruments.Remove(instrument);
-            /*                                  This code can be implemented when the Name key is changed to allow non-unique
-            instrument.IsCheckedOut = false;    names. Once this is implemented, we don't need to Remove the instrument from the
-            db.Instruments.Add(instrument);     DB. so remove the line "db.Instruments.Remove(instrument)" located above
-            */
+            //db.Instruments.Remove(instrument);
+                                              //This code can be implemented when the Name key is changed to allow non-unique
+            instrument.IsCheckedOut = false;  //names. Once this is implemented, we don't need to Remove the instrument from the
+            db.Instruments.Add(instrument);   //DB. so remove the line "db.Instruments.Remove(instrument)" located above
+            
             db.SaveChanges();
             return RedirectToAction("Index");
         }
