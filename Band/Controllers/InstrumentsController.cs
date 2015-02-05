@@ -113,16 +113,20 @@ namespace Band.Controllers
         // POST: Instruments/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(int id, [Bind(Include = "DateIn,CommentIn")] Instrument instrument)
         {
-            Instrument instrument = db.Instruments.Find(id);
-            //db.Instruments.Remove(instrument);
-                                              //This code can be implemented when the Name key is changed to allow non-unique
-            instrument.IsCheckedOut = false;  //names. Once this is implemented, we don't need to Remove the instrument from the
-            db.Instruments.Add(instrument);   //DB. so remove the line "db.Instruments.Remove(instrument)" located above
-            
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            Instrument inst2 = db.Instruments.Find(id);
+            inst2.DateIn = instrument.DateIn;
+            inst2.CommentIn = instrument.CommentIn;
+            inst2.IsCheckedOut = false;
+            if (ModelState.IsValid)
+            {
+                db.Entry(inst2).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View(instrument);
         }
 
         protected override void Dispose(bool disposing)

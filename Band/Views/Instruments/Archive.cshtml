@@ -25,6 +25,12 @@
             @Html.DisplayNameFor(model => model.Comment)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.DateIn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CommentIn)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.IsCheckedOut)
         </th>
     </tr>
@@ -41,9 +47,14 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Date)
             </td>
-
             <td>
                 @Html.DisplayFor(modelItem => item.Comment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateIn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CommentIn)
             </td>
             <td>
                 @{
