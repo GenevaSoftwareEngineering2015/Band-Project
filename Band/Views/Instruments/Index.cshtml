@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Band.Models.Instrument>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Check Out";
 }
 
 <h2>Index</h2>
@@ -46,7 +46,7 @@
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
                     @Html.ActionLink("Details", "Details", new { id = item.ID }) |
-                    @Html.ActionLink("Check In", "Delete", new { id = item.ID })
+                    @Html.ActionLink("Check In", "CheckIn", new { id = item.ID })
                 </td>
             </tr>
          }

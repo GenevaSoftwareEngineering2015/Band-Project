@@ -255,7 +255,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Instruments\Instruments.cshtml" />
     <Content Include="Views\Instruments\Create.cshtml" />
-    <Content Include="Views\Instruments\Delete.cshtml" />
+    <Content Include="Views\Instruments\CheckIn.cshtml" />
     <Content Include="Views\Instruments\Details.cshtml" />
     <Content Include="Views\Instruments\Edit.cshtml" />
     <Content Include="Views\Instruments\Index.cshtml" />

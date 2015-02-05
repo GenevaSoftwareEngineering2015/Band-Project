@@ -96,7 +96,7 @@ namespace Band.Controllers
         }
 
         // GET: Instruments/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult CheckIn(int id)
         {
            /* if (id == null)
             {
@@ -111,7 +111,7 @@ namespace Band.Controllers
         }
 
         // POST: Instruments/Delete/5
-        [HttpPost, ActionName("Delete")]
+        [HttpPost, ActionName("CheckIn")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id, [Bind(Include = "DateIn,CommentIn")] Instrument instrument)
         {
