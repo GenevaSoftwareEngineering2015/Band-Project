@@ -33,6 +33,10 @@
         <th>
             @Html.DisplayNameFor(model => model.IsCheckedOut)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaintenanceNeeded)
+        </th>
+
     </tr>
 
     @foreach (var item in Model)
@@ -65,6 +69,9 @@
                         <p>Checked In</p>
                     }
                  }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaintenanceNeeded)
             </td>
         </tr>
     }
