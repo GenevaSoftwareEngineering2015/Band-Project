@@ -6,7 +6,7 @@ using System.Web;
 
 namespace Band.Models
 {
-    public class Instrument
+    public class CheckOuts
     {
         [Display(Name = "Instrument Name")]
         public string InstrumentName { get; set; }
@@ -22,8 +22,6 @@ namespace Band.Models
         public string CommentIn { get; set; }
         [Display(Name = "Status")]
         public bool IsCheckedOut { get; set; }
-        [Display(Name = "Maintenance Needed")]
-        public string MaintenanceNeeded { get; set; }
         public int ID { get; set; }
       
     }

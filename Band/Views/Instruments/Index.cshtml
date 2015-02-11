@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Band.Models.Instrument>
+﻿@model IEnumerable<Band.Models.CheckOuts>
 
 @{
     ViewBag.Title = "Check Out";
@@ -23,9 +23,6 @@
         <th>
             @Html.DisplayNameFor(model => model.Comment)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MaintenanceNeeded)
-        </th>
         <th></th>
     </tr>
 
@@ -45,9 +42,6 @@
 
                 <td>
                     @Html.DisplayFor(modelItem => item.Comment)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.MaintenanceNeeded)
                 </td>
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |

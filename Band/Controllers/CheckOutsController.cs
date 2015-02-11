@@ -10,7 +10,7 @@ using Band.Models;
 
 namespace Band.Controllers
 {
-    public class InstrumentsController : Controller
+    public class CheckOutsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
@@ -32,7 +32,7 @@ namespace Band.Controllers
             //{
             //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             //}
-            Instrument instrument = db.Instruments.Find(id);
+            CheckOuts instrument = db.Instruments.Find(id);
             if (instrument == null)
             {
                 return HttpNotFound();
@@ -51,7 +51,7 @@ namespace Band.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "InstrumentName,Name,Date,Comment,ID,MaintenanceNeeded")] Instrument instrument)
+        public ActionResult Create([Bind(Include = "InstrumentName,Name,Date,Comment,ID,MaintenanceNeeded")] CheckOuts instrument)
         {
             instrument.IsCheckedOut = true;
             if (ModelState.IsValid)
@@ -71,7 +71,7 @@ namespace Band.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }*/
-            Instrument instrument = db.Instruments.Find(id);
+            CheckOuts instrument = db.Instruments.Find(id);
             if (instrument == null)
             {
                 return HttpNotFound();
@@ -84,14 +84,13 @@ namespace Band.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, [Bind(Include = "InstrumentName,Name,Date,Comment,MaintenanceNeeded")] Instrument instrument)
+        public ActionResult Edit(int id, [Bind(Include = "InstrumentName,Name,Date,Comment,MaintenanceNeeded")] CheckOuts instrument)
         {
-            Instrument inst2 = db.Instruments.Find(id);
+            CheckOuts inst2 = db.Instruments.Find(id);
             inst2.InstrumentName = instrument.InstrumentName;
             inst2.Name = instrument.Name; 
             inst2.Date = instrument.Date;
             inst2.Comment = instrument.Comment;
-            inst2.MaintenanceNeeded = instrument.MaintenanceNeeded;
             if (ModelState.IsValid)
             {
                 db.Entry(inst2).State = EntityState.Modified;
@@ -117,7 +116,7 @@ namespace Band.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }*/
-            Instrument instrument = db.Instruments.Find(id);
+            CheckOuts instrument = db.Instruments.Find(id);
             if (instrument == null)
             {
                 return HttpNotFound();
@@ -128,12 +127,11 @@ namespace Band.Controllers
         // POST: Instruments/Delete/5
         [HttpPost, ActionName("CheckIn")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id, [Bind(Include = "DateIn,CommentIn,MaintenanceNeeded")] Instrument instrument)
+        public ActionResult DeleteConfirmed(int id, [Bind(Include = "DateIn,CommentIn,MaintenanceNeeded")] CheckOuts instrument)
         {
-            Instrument inst2 = db.Instruments.Find(id);
+            CheckOuts inst2 = db.Instruments.Find(id);
             inst2.DateIn = instrument.DateIn;
             inst2.CommentIn = instrument.CommentIn;
-            inst2.MaintenanceNeeded = instrument.MaintenanceNeeded;
             inst2.IsCheckedOut = false;
             if (ModelState.IsValid)
             {
