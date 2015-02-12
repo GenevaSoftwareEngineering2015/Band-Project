@@ -248,13 +248,13 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Instruments\CheckOuts.cshtml" />
-    <Content Include="Views\Instruments\Create.cshtml" />
-    <Content Include="Views\Instruments\CheckIn.cshtml" />
-    <Content Include="Views\Instruments\Details.cshtml" />
-    <Content Include="Views\Instruments\Edit.cshtml" />
-    <Content Include="Views\Instruments\Index.cshtml" />
-    <Content Include="Views\Instruments\Archive.cshtml" />
+    <Content Include="Views\CheckOuts\CheckOuts.cshtml" />
+    <Content Include="Views\CheckOuts\Create.cshtml" />
+    <Content Include="Views\CheckOuts\CheckIn.cshtml" />
+    <Content Include="Views\CheckOuts\Details.cshtml" />
+    <Content Include="Views\CheckOuts\Edit.cshtml" />
+    <Content Include="Views\CheckOuts\Index.cshtml" />
+    <Content Include="Views\CheckOuts\Archive.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
