@@ -13,8 +13,10 @@ namespace Band.Models
         [Display(Name = "Name")]
         public string Name { get; set; }
         [Display(Name = "Check Out Date")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime Date { get; set; }
         [Display(Name = "Check In Date")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime? DateIn { get; set; }
         [Display(Name = "Check Out Comment")]
         public string Comment { get; set; }
