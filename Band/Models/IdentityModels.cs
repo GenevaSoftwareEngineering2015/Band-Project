@@ -31,5 +31,7 @@ namespace Band.Models
         }
 
         public System.Data.Entity.DbSet<Band.Models.CheckOuts> Instruments { get; set; }
+
+        public System.Data.Entity.DbSet<Band.Models.Maintenance> Maintenances { get; set; }
     }
 }
