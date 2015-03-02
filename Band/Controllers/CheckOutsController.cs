@@ -14,25 +14,25 @@ namespace Band.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Instruments
+        // GET: CheckOuts
         public ActionResult Index()
         {
-            return View(db.Instruments.ToList());
+            return View(db.CheckOuts.ToList());
         }
 
         public ActionResult Archive()
         {
-            return View(db.Instruments.ToList());
+            return View(db.CheckOuts.ToList());
         }
 
-        // GET: Instruments/Details/5
+        // GET: CheckOuts/Details/5
         public ActionResult Details(int id)
         {
             //if (id == null)
             //{
             //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             //}
-            CheckOuts instrument = db.Instruments.Find(id);
+            CheckOuts instrument = db.CheckOuts.Find(id);
             if (instrument == null)
             {
                 return HttpNotFound();
@@ -40,13 +40,13 @@ namespace Band.Controllers
             return View(instrument);
         }
 
-        // GET: Instruments/Create
+        // GET: CheckOuts/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Instruments/Create
+        // POST: CheckOuts/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -56,7 +56,7 @@ namespace Band.Controllers
             instrument.IsCheckedOut = true;
             if (ModelState.IsValid)
             {
-                db.Instruments.Add(instrument);
+                db.CheckOuts.Add(instrument);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -64,14 +64,14 @@ namespace Band.Controllers
             return View(instrument);
         }
 
-        // GET: Instruments/Edit/5
+        // GET: CheckOuts/Edit/5
         public ActionResult Edit(int id)
         {
            /* if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }*/
-            CheckOuts instrument = db.Instruments.Find(id);
+            CheckOuts instrument = db.CheckOuts.Find(id);
             if (instrument == null)
             {
                 return HttpNotFound();
@@ -79,14 +79,14 @@ namespace Band.Controllers
             return View(instrument);
         }
 
-        // POST: Instruments/Edit/5
+        // POST: CheckOuts/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, [Bind(Include = "InstrumentName,Name,Date,Comment,MaintenanceNeeded")] CheckOuts instrument)
         {
-            CheckOuts inst2 = db.Instruments.Find(id);
+            CheckOuts inst2 = db.CheckOuts.Find(id);
             inst2.InstrumentName = instrument.InstrumentName;
             inst2.Name = instrument.Name; 
             inst2.Date = instrument.Date;
@@ -109,14 +109,14 @@ namespace Band.Controllers
             //return View(instrument);
         }
 
-        // GET: Instruments/Delete/5
+        // GET: CheckOuts/Delete/5
         public ActionResult CheckIn(int id)
         {
            /* if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }*/
-            CheckOuts instrument = db.Instruments.Find(id);
+            CheckOuts instrument = db.CheckOuts.Find(id);
             if (instrument == null)
             {
                 return HttpNotFound();
@@ -124,12 +124,12 @@ namespace Band.Controllers
             return View(instrument);
         }
 
-        // POST: Instruments/Delete/5
+        // POST: CheckOuts/Delete/5
         [HttpPost, ActionName("CheckIn")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id, [Bind(Include = "DateIn,CommentIn,MaintenanceNeeded")] CheckOuts instrument)
         {
-            CheckOuts inst2 = db.Instruments.Find(id);
+            CheckOuts inst2 = db.CheckOuts.Find(id);
             inst2.DateIn = instrument.DateIn;
             inst2.CommentIn = instrument.CommentIn;
             inst2.IsCheckedOut = false;

@@ -21,7 +21,7 @@ namespace Band.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("BandDBConnection", throwIfV1Schema: false)
         {
         }
 
@@ -30,6 +30,8 @@ namespace Band.Models
             return new ApplicationDbContext();
         }
 
-        public System.Data.Entity.DbSet<Band.Models.CheckOuts> Instruments { get; set; }
+        public System.Data.Entity.DbSet<Band.Models.CheckOuts> CheckOuts { get; set; }
+
+        public System.Data.Entity.DbSet<Band.Models.Instruments> Instruments { get; set; }
     }
 }
