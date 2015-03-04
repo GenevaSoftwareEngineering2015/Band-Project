@@ -9,7 +9,7 @@ namespace Band.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(Band.Models.ApplicationDbContext context)
