@@ -181,7 +181,11 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\CheckOutsController.cs" />
+<<<<<<< HEAD
     <Compile Include="Controllers\InstrumentsController.cs" />
+=======
+    <Compile Include="Controllers\MaintenancesController.cs" />
+>>>>>>> Add-Maintenance-
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -189,7 +193,11 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\CheckOuts.cs" />
+<<<<<<< HEAD
     <Compile Include="Models\Instruments.cs" />
+=======
+    <Compile Include="Models\Maintenance.cs" />
+>>>>>>> Add-Maintenance-
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -257,11 +265,19 @@
     <Content Include="Views\CheckOuts\Edit.cshtml" />
     <Content Include="Views\CheckOuts\Index.cshtml" />
     <Content Include="Views\CheckOuts\Archive.cshtml" />
+<<<<<<< HEAD
     <Content Include="Views\Instruments\Create.cshtml" />
     <Content Include="Views\Instruments\Delete.cshtml" />
     <Content Include="Views\Instruments\Details.cshtml" />
     <Content Include="Views\Instruments\Edit.cshtml" />
     <Content Include="Views\Instruments\Index.cshtml" />
+=======
+    <Content Include="Views\Maintenances\Create.cshtml" />
+    <Content Include="Views\Maintenances\Delete.cshtml" />
+    <Content Include="Views\Maintenances\Details.cshtml" />
+    <Content Include="Views\Maintenances\Edit.cshtml" />
+    <Content Include="Views\Maintenances\Index.cshtml" />
+>>>>>>> Add-Maintenance-
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
