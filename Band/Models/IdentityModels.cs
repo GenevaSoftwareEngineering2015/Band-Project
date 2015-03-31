@@ -3,6 +3,8 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.Linq;
+
 
 namespace Band.Models
 {
@@ -33,5 +35,15 @@ namespace Band.Models
         public System.Data.Entity.DbSet<Band.Models.CheckOuts> CheckOuts { get; set; }
 
         public System.Data.Entity.DbSet<Band.Models.Instruments> Instruments { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<CheckOuts>()
+                            .HasKey(x => new {x.ID})
+                            .HasMany(x => x.Instrument);
+
+        }
     }
 }

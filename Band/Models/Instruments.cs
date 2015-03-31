@@ -8,6 +8,7 @@ namespace Band.Models
 {
     public class Instruments
     {
+        [Key]
         public int ID { get; set; }
         [Display(Name = "Instrument Name")]
         public string ReadableID { get; set; }

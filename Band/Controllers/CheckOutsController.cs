@@ -51,9 +51,10 @@ namespace Band.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "InstrumentName,Name,Date,Comment,ID,MaintenanceNeeded")] CheckOuts instrument)
+        public ActionResult Create([Bind(Include = "InstrumentName,Name,Date,Comment,MaintenanceNeeded")] CheckOuts instrument)
         {
             instrument.IsCheckedOut = true;
+            //AjaxHelper Ajax;
             if (ModelState.IsValid)
             {
                 db.CheckOuts.Add(instrument);

@@ -190,6 +190,10 @@
     <Compile Include="Migrations\201503040157106_InitialMigration.Designer.cs">
       <DependentUpon>201503040157106_InitialMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201503312048000_COIFK.cs" />
+    <Compile Include="Migrations\201503312048000_COIFK.Designer.cs">
+      <DependentUpon>201503312048000_COIFK.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -281,6 +285,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201503040157106_InitialMigration.resx">
       <DependentUpon>201503040157106_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201503312048000_COIFK.resx">
+      <DependentUpon>201503312048000_COIFK.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
