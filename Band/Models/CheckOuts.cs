@@ -34,10 +34,10 @@ namespace Band.Models
         public bool IsCheckedOut { get; set; }
 
         [Key, Column (Order = 1)]
-        public int ID { get; set; }
+        public int InstID { get; set; }
 
-        [ForeignKey("ID")]
-        public virtual ICollection<Instruments> Instrument { get; set; }
+        [ForeignKey("InstID")]
+        public virtual Instruments Instrument { get; set; }
       
     }
 }

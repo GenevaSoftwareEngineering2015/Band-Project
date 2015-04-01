@@ -39,11 +39,6 @@ namespace Band.Models
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-
-            modelBuilder.Entity<CheckOuts>()
-                            .HasKey(x => new {x.ID})
-                            .HasMany(x => x.Instrument);
-
         }
     }
 }

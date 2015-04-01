@@ -46,7 +46,7 @@ namespace Band.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="ReadableID,Type,Make,Model")] Instruments instruments)
+        public ActionResult Create([Bind(Include="InstID,ReadableID,Type,Make,Model")] Instruments instruments)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace Band.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="ID,ReadableID,Type,Make,Model")] Instruments instruments)
+        public ActionResult Edit([Bind(Include="InstID,ReadableID,Type,Make,Model")] Instruments instruments)
         {
             if (ModelState.IsValid)
             {

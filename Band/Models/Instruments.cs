@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -9,7 +10,7 @@ namespace Band.Models
     public class Instruments
     {
         [Key]
-        public int ID { get; set; }
+        public int InstID { get; set; }
         [Display(Name = "Instrument Name")]
         public string ReadableID { get; set; }
         [Display(Name = "Type")]
