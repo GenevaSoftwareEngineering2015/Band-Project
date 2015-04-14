@@ -38,6 +38,7 @@ namespace Band.Models
 
         [ForeignKey("InstID")]
         public virtual Instruments Instrument { get; set; }
+        public IEnumerable<Instruments> InstrumentEnum { get; set;  }
       
     }
 }

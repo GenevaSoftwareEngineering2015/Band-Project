@@ -54,7 +54,6 @@ namespace Band.Controllers
         public ActionResult Create([Bind(Include = "InstrumentName,Name,Date,Comment,MaintenanceNeeded")] CheckOuts instrument)
         {
             instrument.IsCheckedOut = true;
-            //AjaxHelper Ajax;
             if (ModelState.IsValid)
             {
                 db.CheckOuts.Add(instrument);
