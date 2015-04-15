@@ -25,7 +25,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.InstrumentName, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(model => model.Instrument, Model.InstrumentEnum.Select(i => new SelectListItem
+                @Html.DropDownListFor(model => model.InstrumentEnum, Model.InstrumentEnum.Select(i => new SelectListItem
                         {
                             Text = i.ReadableID,
                             Value = i.InstID.ToString()

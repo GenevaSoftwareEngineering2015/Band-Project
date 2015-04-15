@@ -53,7 +53,9 @@ namespace Band.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "InstrumentName,Name,Date,Comment,MaintenanceNeeded")] CheckOuts instrument)
         {
+            List<Instruments> InstList = new List<Instruments>; 
             instrument.IsCheckedOut = true;
+
             if (ModelState.IsValid)
             {
                 db.CheckOuts.Add(instrument);
