@@ -33,5 +33,7 @@ namespace Band.Models
         public System.Data.Entity.DbSet<Band.Models.CheckOuts> CheckOuts { get; set; }
 
         public System.Data.Entity.DbSet<Band.Models.Instruments> Instruments { get; set; }
+
+        public System.Data.Entity.DbSet<Band.Models.Students> Students { get; set; }
     }
 }
