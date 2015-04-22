@@ -23,6 +23,18 @@
         <th>
             @Html.DisplayNameFor(model => model.StudInstrument)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudHome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudSchool)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudBox)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudPhone)
+        </th>
         <th></th>
     </tr>
 
@@ -39,6 +51,18 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.StudInstrument)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudHome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudSchool)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudBox)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudPhone)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.id }) |

@@ -18,5 +18,13 @@ namespace Band.Models
         public string StudInstType { get; set; }
         [Display(Name = "Instrument Name")]
         public string StudInstrument { get; set; }
+        [Display(Name = "Home Address")]
+        public string StudHome { get; set; }
+        [Display(Name = "School Address")]
+        public string StudSchool { get; set; }
+        [Display(Name = "Box Number")]
+        public string StudBox { get; set; }
+        [Display(Name = "Pone Number")]
+        public string StudPhone { get; set; }
     }
 }
