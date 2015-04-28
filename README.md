@@ -12,11 +12,11 @@ using ASP.NET MVC
 1. An attempt was made at having an option of uploading a Microsoft Excel sheet to our website that would then read the data in the cells and store it into the database in the appropriate fields. 
   1. A way of uploading files is in place with a controller called ImportDataController and a view to accompany it,     however there is no actual system set up in the code to read the data that is passed in. 
 
-STUFF YOU WANT TO KNOW
+#STUFF YOU WANT TO KNOW
 
-Entity Framework is bad. 
-Do not be afraid to ask for help.
-You NEED to spend more than 1 hour a week on this project.
+1. Entity Framework is bad. 
+2. Do not be afraid to ask for help.
+3. You NEED to spend more than 1 hour a week on this project.
 
 
 * use this to format the readme and remove this line when it is finished https://github.com/tchapi/markdown-cheatsheet/blob/master/README.md
